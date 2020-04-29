@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+body{
+	margin: 0px;
+}
+.variety{
+	width:100%;
+}
+#var1{
+	width:100px;
+	height: 100px;
+	float: left;
+	margin-left: 10px;
+
+}
+#var2{
+	width:100px;
+	height: 100px;
+	float: left;
+	margin-left: 100px;
+}
+form {
+  width: 300px;
+  margin-left: 100px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 17px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+form #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 10px;
+  padding: 15px;
+
+  
+
+}
+#btn{
+	width:100px;
+	height: 40px;
+	border-radius: 20px;
+	border-style: solid;
+	color: white;
+	background-color: blue;
+	margin-left: 200px;
+}
+
+/*form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+*/
+input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+}
+#rs{
+	margin-left:320px;
+	margin-top: -30px;
+	font-weight: bold;
+
+}
+#mkt{
+	margin-left: 200px;
+	width:740px 
+	height:241px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+@media screen and (max-width: 700px) {
+	#var2{
+		margin-left: 250px;
+		margin-top: -100px;
+	}
+	form{
+		margin-left: 35px;
+	}
+	#btn{
+		margin-left: 130px;
+	}
+	#rs{
+		margin-left: 250px;
+	}
+	#mkt{
+		margin-left: 0px;
+		width:420px; 
+	   height:141px;
+	}
+</style>
+<script>
+	function increaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  document.getElementById('number').value = value;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value < 1 ? value = 1 : '';
+  value--;
+  document.getElementById('number').value = value;
+}
+var x;
+function first()
+{
+x=399;
+document.getElementById("var1").style.background="#39f520";
+document.getElementById("var1").style.color="white";
+}
+function second()
+{
+x=209;
+document.getElementById("var2").style.background="#39f520";
+document.getElementById("var2").style.color="white";
+}
+function calculate(){
+	var value = parseInt(document.getElementById('number').value);
+	var result = x * value;
+	document.getElementById('rs').innerHTML = result;
+}
+
+	</script>
+<body>
+	<div class="section1">
+		<div class="container">
+			<center><img src ="ata.jpg" width="425px" height="425px"></center>
+		</div>
+	</div>
+	<div class="section2">
+		<h2 style="font-size: 35px;margin-bottom: 10px;"> Ashirvaad Atta Whole Wheat</h2>
+		<h3 style="font-size: 30px;margin: 0px;">Rs 399</h3>
+		<p style="color:grey">Pack Sizes</p>
+		<div class="container">
+		<div class="row" style="width: 50%;">
+		<div class="ab">
+				<button type="button" id="var1" onclick="first()">10 Kg<br>Rs 399</button>
+			</div>
+			<div class="ab1">
+				<button type="button" id="var2" onclick="second()">5 Kg<br>Rs 209</button>
+
+			</div>
+		</div>
+		</div>
+		<form>
+  <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">
+  	<p style="margin-top: -10px;">-</p>
+  </div>
+  <input type="number" id="number" value="0" />
+  <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">
+  	<p style="margin-top: -10px;">+</p>
+  </div>
+</form>
+<button id="btn" type="button" style="margin-top: 20px;" onclick="calculate()">Payable
+	</button>=
+	<p id="rs">Amount</p>
+	</div>
+		<br>
+		<div class="market" style="background-color: lightgrey;width: 100%">
+			<div class="container">
+			<img src="market.png" id="mkt">
+		</div>
+			</div><br>
+			<div class="container">
+			<div class="row">
+				
+				<div class="col-sm-6">
+					<img src="it1.jpg" width="400px" height="200px"><br><br>
+				</div>
+				<div class="col-sm-6">
+					<img src="it2.jpg" width="400px" height="200px"><br>
+				</div>
+			</div><br>
+				<div class="row">
+				
+				<div class="col-sm-6">
+					<img src="it3.jpg" width="400px" height="200px"><br><br>
+				</div>
+				<div class="col-sm-6">
+					<img src="it4.jpg" width="400px" height="200px"><br><br>
+				</div>
+			</div>
+			</div>
+		
+	
+
+</body>
+</html>
